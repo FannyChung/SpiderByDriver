@@ -201,9 +201,9 @@ public class ReivewWebDriver {
             if (i == productNum) {
                 break;
             }
+
             nDriver.nextPage(nDriver.getReviewPage(productUrl.getString()));
-            sheet = nDriver.getBook().createSheet(
-                    productUrl.getString().substring(0,10), i);// 设置表单名字和编号
+            sheet = nDriver.getBook().createSheet("product "+i, i);// 设置表单名字和编号
             try {
                 nDriver.printReviews(reviews, sheet);
             } catch (RowsExceededException e) {
